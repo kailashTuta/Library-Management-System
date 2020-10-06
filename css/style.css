@@ -12,3 +12,13 @@ html body {
     font-weight: 500;
     color: rgb(250, 248, 240)!important;
 }
+
+.jumbotron {
+    background-image: url("../img/Home-img.jpg");
+    background-size: cover;
+}
+
+#para-1 {
+    font-weight: 600;
+    font-size: 22px;
+}
