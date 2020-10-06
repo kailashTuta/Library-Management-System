@@ -20,8 +20,10 @@ myApp.config(function ($routeProvider, $locationProvider) {
 });
 
 // CONTROLLER
-myApp.controller('homeController', ['$scope', function ($scope) {
-
+myApp.controller('homeController', ['$scope', '$http', function ($scope, $http) {
+    $http.get('../json/Home.json').then(function (response) {
+        $scope.home = response.data;
+    });
 }]);
 myApp.controller('aboutController', ['$scope', function ($scope) {
 
