@@ -1,20 +1,53 @@
+<br>
+<br>
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <h1 class="display-3 text-white">Welcome to the Online Library</h1>
         <br>
         <p class="text-white" id="para-1">
             A service dedicated to students of the University Distance learning community. We provide online
-            resources,professional support and guidance to all our students whenever, and from wherever they
+            resources, professional support, and guidance to all our students whenever, and from wherever they
             have chosen to study.
         </p>
     </div>
 </div>
 
-<div class="container">
+<div class="container" id="homeMain">
     <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-12" ng-repeat="h in home">
-            <h4>{{h.title}}</h4>
+            <h4 id="homeTitle">{{h.title}}</h4>
             <p id="homeDescription">{{h.description}}</p>
         </div>
     </div>
 </div>
+
+<footer class="footer bg-dark text-white" id="stickyFooter">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-sm-12">
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <h4>Follow us on</h4>
+                <ul id="followIcons">
+                    <li><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></li>
+                </ul>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <h4>Connect With Us</h4>
+                <div class="form-group">
+                    <label for="Email">Email:</label>
+                    <div class="row">
+                        <div class="col-md-8 col-sm-12">
+                            <input type="Email" class="form-control" name="email" placeholder="Please Enter Your Email" autocomplete="off" required>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <input type="submit" class="btn btn-primary">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -14,8 +14,9 @@ html body {
 }
 
 .jumbotron {
-    background-image: url("../img/Home-img.jpg");
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/Home-img.jpg");
     background-size: cover;
+    margin-bottom: 20px;
 }
 
 #para-1 {
@@ -23,6 +24,43 @@ html body {
     font-size: 22px;
 }
 
-#homeDescription{
+#homeTitle {
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+#homeMain {
+    margin-bottom: 80px;
+}
+
+#homeDescription {
     font-size: 16px;
+}
+
+#stickyFooter {
+    flex-shrink: none;
+}
+
+#followIcons li {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+#followIcons .fa {
+    display: inline-block;
+    border-radius: 60px;
+    box-shadow: 0px 0px 2px #888;
+    padding: 0.5em 0.6em;
+}
+
+.fa-facebook {
+    color: rgb(72, 103, 170);
+}
+
+.fa-twitter {
+    color: rgb(51, 170, 231);
+}
+
+.fa-linkedin {
+    color: rgb(0, 119, 181);
 }
