@@ -31,3 +31,19 @@ myApp.controller('aboutController', ['$scope', function ($scope) {
 myApp.controller('libraryController', ['$scope', function ($scope) {
 
 }]);
+
+// DIRECTIVES
+myApp.directive("libraryFooter", function () {
+    return {
+        restrict: 'E',
+        templateUrl: '../directives/footer.html',
+        replace: true,
+    };
+});
+myApp.directive("libraryNavbar", function () {
+    return {
+        restrict: 'E',
+        templateUrl: '../directives/navbar.html',
+        replace: true,
+    };
+});
