@@ -40,7 +40,7 @@ html body {
     flex-shrink: none;
 }
 
-#stickyFooter h4{
+#stickyFooter h4 {
     text-transform: capitalize;
 }
 
@@ -70,4 +70,8 @@ html body {
 
 .fa-linkedin {
     color: rgb(0, 119, 181);
+}
+
+#serviceDetails {
+    margin-bottom: 20px;
 }

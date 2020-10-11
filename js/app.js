@@ -9,9 +9,9 @@ myApp.config(function ($routeProvider, $locationProvider) {
             templateUrl: '../pages/home.html',
             controller: 'homeController'
         })
-        .when('/about', {
-            templateUrl: '../pages/about.html',
-            controller: 'aboutController'
+        .when('/services', {
+            templateUrl: '../pages/service.html',
+            controller: 'servicesController'
         })
         .when('/library', {
             templateUrl: '../pages/library.html',
@@ -25,8 +25,10 @@ myApp.controller('homeController', ['$scope', '$http', function ($scope, $http) 
         $scope.home = response.data;
     });
 }]);
-myApp.controller('aboutController', ['$scope', function ($scope) {
-
+myApp.controller('servicesController', ['$scope', '$http', function ($scope, $http) {
+    $http.get('../json/services.json').then(function (response) {
+        $scope.services = response.data;
+    });
 }]);
 myApp.controller('libraryController', ['$scope', function ($scope) {
 

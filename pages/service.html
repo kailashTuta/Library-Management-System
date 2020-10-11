@@ -1,0 +1,21 @@
+<library-navbar></library-navbar>
+<br>
+<br>
+<br>
+<h1 class="display-3 text-center font-weight-bold">Services</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="card col-sm-12 col-md-4 shadow-lg p-3 mb-5 bg-white rounded" ng-repeat="service in services"
+            id="serviceDetails">
+            <div class="card-title">
+                <h4>{{service.title}}</h4>
+            </div>
+            <div class="card-body">
+                <p>{{service .description}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<library-footer></library-footer>

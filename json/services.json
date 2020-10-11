@@ -1,0 +1,38 @@
+[
+    {
+        "title":"Services",
+        "description":"The Online Library provides a number of services to support your individual information needs. Each programme has an individual gateway. This will enable you to go directly to resources that are relevant to your course, thereby saving you time"
+    },
+    {
+        "title":"User Awareness Programs",
+        "description":"The Library of the university organizes User Awareness Program in the beginning of academic session, so as every new user of library may know about various resources and services of library and also methods to access or utilize the same."
+    },
+    {
+        "title":"CD/DVD Content Service",
+        "description": "On the pattern of Journal Content Service, this service arranges the contents of recently received CDs/DVDs and route the same to the faculty members and students, so as users may make use of CDs/DVDs received by the libraries."
+    },
+    {
+        "title":"Newspaper Clipping Service",
+        "description":"The Newspaper Clipping Service is also provided by all the libraries of LPU. The newspaper clipping service arranges the clippings of Academic activities, News, Notices, Advertisement, write ups etc."
+    },
+    {
+        "title":"Circulation of Books",
+        "description":"All libraries in the university provide this service with varied loan privileges. Students and staff can make use of any library to avail this service"
+    },
+    {
+        "title":"Documentation Service",
+        "description":"The Documentation Section provides services such as photocopy, scanning, type setting, designing and printing. Library users are provided with some discount on the given services."
+    },
+    {
+        "title":"Online Catalogue (OPAC)",
+        "description":"The Online Catalogue of all the libraries is available for 24X7 throughout year. Users may search and check the availability of a particular book, journal, audio-visual material, theses, dissertation etc. anywhere and anytime."
+    },
+    {
+        "title":"Select your Study Programme",
+        "description":"When you select your study programme a list of databases you are able to access through that programme will be shown along with other useful resources suggested by your programme."
+    },
+    {
+        "title":"Journals",
+        "description":"Academic and peer reviewed journals give you a trusted and robust source of reference for your research and studies"
+    }
+]
