@@ -16,6 +16,10 @@ myApp.config(function ($routeProvider, $locationProvider) {
         .when('/library', {
             templateUrl: '../pages/library.html',
             controller: 'libraryController'
+        })
+        .when('/register', {
+            templateUrl: '../pages/register.html',
+            controller: 'registerController'
         });
 });
 
@@ -31,6 +35,10 @@ myApp.controller('servicesController', ['$scope', '$http', function ($scope, $ht
     });
 }]);
 myApp.controller('libraryController', ['$scope', function ($scope) {
+    $scope.password = '';
+    console.log($scope.password);
+}]);
+myApp.controller('registerController', ['$scope', function ($scope) {
 
 }]);
 
@@ -46,6 +54,13 @@ myApp.directive("libraryNavbar", function () {
     return {
         restrict: 'E',
         templateUrl: '../directives/navbar.html',
+        replace: true,
+    };
+});
+myApp.directive("libraryLogin", function () {
+    return {
+        restrict: 'E',
+        templateUrl: '../directives/login.html',
         replace: true,
     };
 });
