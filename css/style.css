@@ -1,5 +1,8 @@
 * {
     scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 html body {
@@ -77,3 +80,13 @@ html body {
     margin-bottom: 20px;
 }
 
+#libraryLogin {
+    background: rgb(17, 53, 55);
+    border-radius: 30px;
+    box-shadow: 12px 12px 22px grey;
+}
+
+#loginImage {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
