@@ -1,8 +1,8 @@
 // MODULES
-var myApp = angular.module('myApp', ['ngRoute']);
+var myLibrary = angular.module('myLibrary', ['ngRoute']);
 
 // ROUTES
-myApp.config(function ($routeProvider, $locationProvider) {
+myLibrary.config(function ($routeProvider, $locationProvider) {
     $locationProvider.hashPrefix('');
     $routeProvider
         .when('/', {
@@ -13,54 +13,69 @@ myApp.config(function ($routeProvider, $locationProvider) {
             templateUrl: '../pages/service.html',
             controller: 'servicesController'
         })
-        .when('/library', {
-            templateUrl: '../pages/library.html',
-            controller: 'libraryController'
+        .when('/login', {
+            templateUrl: '../pages/login.html',
+            controller: 'loginController'
         })
         .when('/register', {
             templateUrl: '../pages/register.html',
             controller: 'registerController'
+        })
+        .when('/library', {
+            templateUrl: '../pages/library.html',
+            controller: 'libraryController'
         });
 });
 
 // CONTROLLER
-myApp.controller('homeController', ['$scope', '$http', function ($scope, $http) {
+myLibrary.controller('homeController', ['$scope', '$http', function ($scope, $http) {
     $http.get('../json/Home.json').then(function (response) {
         $scope.home = response.data;
     });
 }]);
-myApp.controller('servicesController', ['$scope', '$http', function ($scope, $http) {
+myLibrary.controller('servicesController', ['$scope', '$http', function ($scope, $http) {
     $http.get('../json/services.json').then(function (response) {
         $scope.services = response.data;
     });
 }]);
-myApp.controller('libraryController', ['$scope', function ($scope) {
+myLibrary.controller('loginController', ['$scope', function ($scope) {
     $scope.password = '';
     console.log($scope.password);
 }]);
-myApp.controller('registerController', ['$scope', function ($scope) {
+myLibrary.controller('registerController', ['$scope', function ($scope) {
+    $scope.password = '';
+    console.log($scope.password);
+}]);
+myLibrary.controller('libraryController', ['$scope', function ($scope) {
 
 }]);
 
 // DIRECTIVES
-myApp.directive("libraryFooter", function () {
+myLibrary.directive("libraryFooter", function () {
     return {
         restrict: 'E',
         templateUrl: '../directives/footer.html',
         replace: true,
     };
 });
-myApp.directive("libraryNavbar", function () {
+myLibrary.directive("libraryNavbar", function () {
     return {
         restrict: 'E',
         templateUrl: '../directives/navbar.html',
         replace: true,
     };
 });
-myApp.directive("libraryLogin", function () {
+myLibrary.directive("libraryLogin", function () {
     return {
         restrict: 'E',
-        templateUrl: '../directives/login.html',
+        templateUrl: '../directives/loginform.html',
+        replace: true,
+    };
+});
+myLibrary.directive("libraryRegister", function () {
+    return {
+        restrict: 'E',
+        templateUrl: '../directives/registerform.html',
         replace: true,
     };
 });

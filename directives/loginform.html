@@ -1,0 +1,25 @@
+<form onsubmit="window.location.href='#/library';">
+    <div class="form-row mt-3">
+        <div class="form-group col-md-7">
+            <label for="email" class="text-white">Email</label>
+            <input type="email" class="form-control" placeholder="Email Address" autocomplete="off">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-7">
+            <label for="password" class="text-white">Password</label>
+            <input type="password" class="form-control" placeholder="Password" ng-model="password">
+            <small class="text-warning" ng-show="password.length < 8" ng-hide="password.length == 0">Your
+                password is
+                less than 8
+                characters</small>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-lg-7">
+            <input type="submit" class="btn btn-warning" value="Login">
+        </div>
+    </div>
+    <p class="text-white">Don't have a account? <a class="text-warning" href="#/register">Register
+            here</a></p>
+</form>

@@ -1,0 +1,33 @@
+<form onsubmit="window.location.href='#/login';" method="post">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="firstname" class="text-white">Firstname</label>
+            <input type="text" class="form-control" placeholder="First name" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="lastname" class="text-white">Lastname</label>
+            <input type="text" class="form-control" placeholder="Last name" required>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label for="email" class="text-white">Email</label>
+            <input type="email" class="form-control" placeholder="Email" required>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label for="password" class="text-white">Password</label>
+            <input type="password" class="form-control" placeholder="password" ng-model="password" required>
+        </div>
+        <small class="text-warning" ng-show="password.length<8" ng-hide="password.length == 0">Your
+            password must be 8-20 characters
+            long</small>
+    </div>
+    <div class="form-row">
+        <div class="col-lg-7">
+            <input type="submit" class="btn btn-warning" value="Sign Up">
+        </div>
+    </div>
+    <p class="text-white">Already a user?<a class="text-warning" href="#/library"> Login</a></p>
+</form>
