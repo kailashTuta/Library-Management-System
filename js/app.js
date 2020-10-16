@@ -27,6 +27,16 @@ myLibrary.config(function ($routeProvider, $locationProvider) {
         });
 });
 
+//SERVICES
+myLibrary.service('userCredentials', function () {
+    this.userDetails = [
+        {
+            "email": "user@usermail.com",
+            "Password": "User123"
+        }
+    ];
+});
+
 // CONTROLLER
 myLibrary.controller('homeController', ['$scope', '$http', function ($scope, $http) {
     $http.get('../json/Home.json').then(function (response) {
@@ -38,13 +48,36 @@ myLibrary.controller('servicesController', ['$scope', '$http', function ($scope,
         $scope.services = response.data;
     });
 }]);
-myLibrary.controller('loginController', ['$scope', function ($scope) {
+myLibrary.controller('loginController', ['$scope', 'userCredentials', function ($scope, usercredentials) {
     $scope.password = '';
-    console.log($scope.password);
+    // console.log($scope.password);
+    $scope.loginDetails = usercredentials.userDetails;
+    console.log($scope.loginDetails);
 }]);
-myLibrary.controller('registerController', ['$scope', function ($scope) {
-    $scope.password = '';
-    console.log($scope.password);
+myLibrary.controller('registerController', ['$scope', 'userCredentials', '$window', function ($scope, userCredentials, $window) {
+    // $scope.password = '';
+    // console.log($scope.password);
+    $scope.registerDetails = userCredentials.userDetails;
+    $scope.registerDetails.push({ 'email': "kailashtuta2000@gmail.com", "password": "Hello" });
+
+    $scope.validation = function () {
+        var logged = true;
+        for (var i = 0; i < $scope.registerDetails.length; i++) {
+            if ($scope.email == $scope.registerDetails[i].email) {
+                logged = false;
+                console.log($scope.registerDetails[i].email);
+            }
+        }
+        if (logged) {
+            $window.location.href = '#/login';
+        }
+        else {
+            alert("User already exist");
+        }
+    };
+    $scope.$watch('userDetails', function () {
+        userCredentials.userDetails = $scope.registerDetails;
+    });
 }]);
 myLibrary.controller('libraryController', ['$scope', function ($scope) {
 
