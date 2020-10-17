@@ -31,8 +31,10 @@ myLibrary.config(function ($routeProvider, $locationProvider) {
 myLibrary.service('userCredentials', function () {
     this.userDetails = [
         {
+            "firstname": "User",
+            "lastname": "1234",
             "email": "user@usermail.com",
-            "Password": "User123"
+            "password": "User123"
         }
     ];
 });
@@ -48,27 +50,35 @@ myLibrary.controller('servicesController', ['$scope', '$http', function ($scope,
         $scope.services = response.data;
     });
 }]);
-myLibrary.controller('loginController', ['$scope', 'userCredentials', function ($scope, usercredentials) {
-    $scope.password = '';
+myLibrary.controller('loginController', ['$scope', 'userCredentials', '$window', function ($scope, usercredentials, $window) {
     // console.log($scope.password);
     $scope.loginDetails = usercredentials.userDetails;
     console.log($scope.loginDetails);
+    $scope.validation = function () {
+        var logged = false;
+        for (var i = 0; i < $scope.loginDetails.length; i++) {
+            if ($scope.email == $scope.loginDetails[i].email && $scope.password == $scope.loginDetails[i].password) {
+                logged = true;
+            }
+        }
+        if (logged) {
+            $window.location.href = '#/library';
+        } else {
+            alert('Invalid Details');
+        }
+    };
 }]);
 myLibrary.controller('registerController', ['$scope', 'userCredentials', '$window', function ($scope, userCredentials, $window) {
-    // $scope.password = '';
-    // console.log($scope.password);
     $scope.registerDetails = userCredentials.userDetails;
-    $scope.registerDetails.push({ 'email': "kailashtuta2000@gmail.com", "password": "Hello" });
-
     $scope.validation = function () {
         var logged = true;
         for (var i = 0; i < $scope.registerDetails.length; i++) {
             if ($scope.email == $scope.registerDetails[i].email) {
                 logged = false;
-                console.log($scope.registerDetails[i].email);
             }
         }
         if (logged) {
+            $scope.registerDetails.push({ "firstname": $scope.firstname, "lastname": $scope.lastname, "email": $scope.email, "password": $scope.password });
             $window.location.href = '#/login';
         }
         else {
@@ -80,7 +90,7 @@ myLibrary.controller('registerController', ['$scope', 'userCredentials', '$windo
     });
 }]);
 myLibrary.controller('libraryController', ['$scope', function ($scope) {
-
+    
 }]);
 
 // DIRECTIVES
