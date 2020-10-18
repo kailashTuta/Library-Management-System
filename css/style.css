@@ -90,3 +90,15 @@ html body {
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
 }
+
+#availableBooks:hover {
+    box-shadow: 5px 15px 10px grey;
+}
+
+#issuedBooks:hover {
+    box-shadow: 5px 15px 10px grey;
+}
+
+#returnBooks:hover {
+    box-shadow: 5px 15px 10px grey;
+}

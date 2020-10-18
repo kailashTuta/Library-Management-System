@@ -1,0 +1,25 @@
+<library-navbar></library-navbar>
+<br>
+<br>
+<br>
+<a href="#/library" class="backButton mx-3">
+    <i class="fa fa-arrow-circle-o-left fa-2x" aria-hidden="true"></i>
+</a>
+<div class="container">
+    <h1 class="display-3 text-center" id="bookHeading">Books</h1>
+    <br>
+    <div class="row">
+        <div class="col-md-4" ng-repeat="book in books">
+            <div class="card w-80 h-70">
+                <img class="card-img-top" ng-src="{{book.thumbnailUrl}}" alt="{{book.title}}">
+                <div class="card-body">
+                    <p class="card-title text-primary font-weight-bold text-capitalize">{{book.title}}</p>
+                    <span class="badge badge-pill badge-danger">{{book.categories[0]}}</span>
+                    <span class="badge badge-pill badge-dark">{{book.categories[1]}}</span>
+                    <p class="card-text lead">{{book.authors[0]}}</p>
+                    <btn href="#" class="btn btn-warning rounded-circle"><i class="fa fa-plus"></i></btn>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

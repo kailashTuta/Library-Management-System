@@ -24,6 +24,10 @@ myLibrary.config(function ($routeProvider, $locationProvider) {
         .when('/library', {
             templateUrl: '../pages/library.html',
             controller: 'libraryController'
+        })
+        .when('/books', {
+            templateUrl: '../pages/books.html',
+            controller: 'booksController'
         });
 });
 
@@ -90,7 +94,12 @@ myLibrary.controller('registerController', ['$scope', 'userCredentials', '$windo
     });
 }]);
 myLibrary.controller('libraryController', ['$scope', function ($scope) {
-    
+
+}]);
+myLibrary.controller('booksController', ['$scope', '$http', function ($scope, $http) {
+    $http.get('../json/books.json').then(function (response) {
+        $scope.books = response.data;
+    });
 }]);
 
 // DIRECTIVES
