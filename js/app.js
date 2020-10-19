@@ -99,6 +99,38 @@ myLibrary.controller('libraryController', ['$scope', function ($scope) {
 myLibrary.controller('booksController', ['$scope', '$http', function ($scope, $http) {
     $http.get('../json/books.json').then(function (response) {
         $scope.books = response.data;
+        $scope.java = [];
+        $scope.internet = [];
+        $scope.business = [];
+        $scope.web = [];
+        $scope.software = [];
+        $scope.microsoft = [];
+        $scope.others = [];
+        for (var i = 0; i <= $scope.books.length; i++) {
+            console.log($scope.books[i].categories[0]);
+            if ($scope.books[i].categories[0] == 'Java' || $scope.books[i].categories[1] == 'Java') {
+                $scope.java.push($scope.books[i]);
+            }
+            else if ($scope.books[i].categories[0] == 'Internet' || $scope.books[i].categories[1] == 'Internet') {
+                $scope.internet.push($scope.books[i]);
+            }
+            else if ($scope.books[i].categories[0] == 'Business' || $scope.books[i].categories[1] == 'Business') {
+                $scope.business.push($scope.books[i]);
+            }
+            else if ($scope.books[i].categories[0] == 'Web Development' || $scope.books[i].categories[1] == 'Web Development') {
+                $scope.web.push($scope.books[i]);
+            }
+            else if ($scope.books[i].categories[0] == 'Software Engineering' || $scope.books[i].categories[1] == 'Software Engineering') {
+                $scope.software.push($scope.books[i]);
+            }
+            else if ($scope.books[i].categories[0] == 'Microsoft' || $scope.books[i].categories[1] == 'Microsoft') {
+                $scope.microsoft.push($scope.books[i]);
+            }
+            else {
+                $scope.others.push($scope.books[i]);
+            }
+        }
+
     });
 }]);
 
@@ -128,6 +160,13 @@ myLibrary.directive("libraryRegister", function () {
     return {
         restrict: 'E',
         templateUrl: '../directives/registerform.html',
+        replace: true,
+    };
+});
+myLibrary.directive("bookSection", function () {
+    return {
+        restrict: 'E',
+        templateUrl: '../directives/bookssection.html',
         replace: true,
     };
 });
