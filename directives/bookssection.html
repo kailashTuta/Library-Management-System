@@ -1,15 +1,17 @@
-<div class="col-md-10">
+<div>
     <div class="row"
         ng-hide="javaChecked || internetChecked || businessChecked || webChecked || softwareChecked || microsoftChecked || otherChecked">
         <div class=" col-md-4" ng-repeat="book in books">
             <div class="card w-80 h-70">
                 <img class="card-img-top" ng-src="{{book.thumbnailUrl}}" alt="{{book.title}}">
                 <div class="card-body">
-                    <p class="card-title text-primary font-weight-bold text-capitalize">{{book.title}}</p>
+                    <p class="card-title text-primary font-weight-bold text-capitalize">
+                        {{book.title}}</p>
                     <span class="badge badge-pill badge-danger">{{book.categories[0]}}</span>
                     <span class="badge badge-pill badge-dark">{{book.categories[1]}}</span>
                     <p class="card-text lead">{{book.authors[0]}}</p>
-                    <btn href="#" class="btn btn-warning rounded-circle"><i class="fa fa-plus"></i></btn>
+                    <button href="#" class="btn btn-warning rounded-circle" ng-click="addBook(book)"><i
+                            class="fa fa-plus"></i></button>
                 </div>
             </div>
         </div>
@@ -23,7 +25,8 @@
                     <span class="badge badge-pill badge-danger">{{j.categories[0]}}</span>
                     <span class="badge badge-pill badge-dark">{{j.categories[1]}}</span>
                     <p class="card-text lead">{{j.authors[0]}}</p>
-                    <btn href="#" class="btn btn-warning rounded-circle"><i class="fa fa-plus"></i></btn>
+                    <button href="#" class="btn btn-warning rounded-circle" ng-click="addBook(j)"><i
+                            class="fa fa-plus"></i></button>
                 </div>
             </div>
         </div>
@@ -37,7 +40,8 @@
                     <span class="badge badge-pill badge-danger">{{i.categories[0]}}</span>
                     <span class="badge badge-pill badge-dark">{{i.categories[1]}}</span>
                     <p class="card-text lead">{{i.authors[0]}}</p>
-                    <btn href="#" class="btn btn-warning rounded-circle"><i class="fa fa-plus"></i></btn>
+                    <button href="#" class="btn btn-warning rounded-circle" ng-click="addBook(i)"><i
+                            class="fa fa-plus"></i></button>
                 </div>
             </div>
         </div>
@@ -51,7 +55,8 @@
                     <span class="badge badge-pill badge-danger">{{b.categories[0]}}</span>
                     <span class="badge badge-pill badge-dark">{{b.categories[1]}}</span>
                     <p class="card-text lead">{{b.authors[0]}}</p>
-                    <btn href="#" class="btn btn-warning rounded-circle"><i class="fa fa-plus"></i></btn>
+                    <button href="#" class="btn btn-warning rounded-circle" ng-click="addBook(b)"><i
+                            class="fa fa-plus"></i></button>
                 </div>
             </div>
         </div>
@@ -65,7 +70,8 @@
                     <span class="badge badge-pill badge-danger">{{w.categories[0]}}</span>
                     <span class="badge badge-pill badge-dark">{{w.categories[1]}}</span>
                     <p class="card-text lead">{{w.authors[0]}}</p>
-                    <btn href="#" class="btn btn-warning rounded-circle"><i class="fa fa-plus"></i></btn>
+                    <button href="#" class="btn btn-warning rounded-circle" ng-click="addBook(w)"><i
+                            class="fa fa-plus"></i></button>
                 </div>
             </div>
         </div>
@@ -79,7 +85,8 @@
                     <span class="badge badge-pill badge-danger">{{s.categories[0]}}</span>
                     <span class="badge badge-pill badge-dark">{{s.categories[1]}}</span>
                     <p class="card-text lead">{{s.authors[0]}}</p>
-                    <btn href="#" class="btn btn-warning rounded-circle"><i class="fa fa-plus"></i></btn>
+                    <button href="#" class="btn btn-warning rounded-circle" ng-click="addBook(s)"><i
+                            class="fa fa-plus"></i></button>
                 </div>
             </div>
         </div>
@@ -93,7 +100,8 @@
                     <span class="badge badge-pill badge-danger">{{m.categories[0]}}</span>
                     <span class="badge badge-pill badge-dark">{{m.categories[1]}}</span>
                     <p class="card-text lead">{{m.authors[0]}}</p>
-                    <btn href="#" class="btn btn-warning rounded-circle"><i class="fa fa-plus"></i></btn>
+                    <button href="#" class="btn btn-warning rounded-circle" ng-click="addBook(m)"><i
+                            class="fa fa-plus"></i></button>
                 </div>
             </div>
         </div>
@@ -107,7 +115,8 @@
                     <span class="badge badge-pill badge-danger">{{o.categories[0]}}</span>
                     <span class="badge badge-pill badge-dark">{{o.categories[1]}}</span>
                     <p class="card-text lead">{{o.authors[0]}}</p>
-                    <btn href="#" class="btn btn-warning rounded-circle"><i class="fa fa-plus"></i></btn>
+                    <button href="#" class="btn btn-warning rounded-circle" ng-click="addBook(o)"><i
+                            class="fa fa-plus"></i></button>
                 </div>
             </div>
         </div>

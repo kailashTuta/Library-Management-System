@@ -1,0 +1,29 @@
+<library-navbar></library-navbar>
+<br>
+<br>
+<br>
+<a href="#/library" class="backButton mx-3">
+    <i class="fa fa-arrow-circle-o-left fa-2x" aria-hidden="true"></i>
+</a>
+<div class="container">
+    <table class="table table-hover table-bordered table-responsive-sm">
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Book</th>
+                <th scope="col">Authors</th>
+                <th scope="col">Issued Date</th>
+                <th scope="col">Return Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="ib in issuedBookDetails | filter:q as results track by ib.title">
+                <th scope="row">{{$index + 1}}</th>
+                <td>{{ib.title}}</td>
+                <td>{{ib.authors[0]}}</td>
+                <td>{{issuedDate | date:"dd MMM yyyy"}}</td>
+                <td>{{returnDate | date:"dd MMM yyyy"}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

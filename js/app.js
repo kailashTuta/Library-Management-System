@@ -28,6 +28,10 @@ myLibrary.config(function ($routeProvider, $locationProvider) {
         .when('/books', {
             templateUrl: '../pages/books.html',
             controller: 'booksController'
+        })
+        .when('/issuedbooks', {
+            templateUrl: '../pages/issuedBooks.html',
+            controller: 'issuedBooksController'
         });
 });
 
@@ -41,6 +45,10 @@ myLibrary.service('userCredentials', function () {
             "password": "User123"
         }
     ];
+});
+
+myLibrary.service('bookDetails', function () {
+    this.bookDetails = [];
 });
 
 // CONTROLLER
@@ -96,7 +104,8 @@ myLibrary.controller('registerController', ['$scope', 'userCredentials', '$windo
 myLibrary.controller('libraryController', ['$scope', function ($scope) {
 
 }]);
-myLibrary.controller('booksController', ['$scope', '$http', function ($scope, $http) {
+myLibrary.controller('booksController', ['$scope', '$http', 'bookDetails', function ($scope, $http, bookDetails) {
+    $scope.bookDetails = bookDetails.bookDetails;
     $http.get('../json/books.json').then(function (response) {
         $scope.books = response.data;
         $scope.java = [];
@@ -107,7 +116,6 @@ myLibrary.controller('booksController', ['$scope', '$http', function ($scope, $h
         $scope.microsoft = [];
         $scope.others = [];
         for (var i = 0; i <= $scope.books.length; i++) {
-            console.log($scope.books[i].categories[0]);
             if ($scope.books[i].categories[0] == 'Java' || $scope.books[i].categories[1] == 'Java') {
                 $scope.java.push($scope.books[i]);
             }
@@ -130,9 +138,24 @@ myLibrary.controller('booksController', ['$scope', '$http', function ($scope, $h
                 $scope.others.push($scope.books[i]);
             }
         }
-
+    });
+    $scope.addBook = function (book) {
+        $scope.bookDetails.push(book);
+        console.log($scope.bookDetails);
+    };
+    $scope.$watch('bookDetails', function () {
+        bookDetails.bookDetails = $scope.bookDetails;
     });
 }]);
+myLibrary.controller('issuedBooksController', ['$scope', 'bookDetails', function ($scope, bookDetails) {
+    $scope.issuedDate = new Date();
+    $scope.returnDate = new Date();
+    $scope.returnDate.setDate($scope.issuedDate.getDate() + 5);
+    $scope.issuedBookDetails = bookDetails.bookDetails;
+    console.log($scope.issuedBookDetails);
+}]);
+
+
 
 // DIRECTIVES
 myLibrary.directive("libraryFooter", function () {
