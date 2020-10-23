@@ -32,6 +32,10 @@ myLibrary.config(function ($routeProvider, $locationProvider) {
         .when('/issuedbooks', {
             templateUrl: '../pages/issuedBooks.html',
             controller: 'issuedBooksController'
+        })
+        .when('/returnedbooks', {
+            templateUrl: '../pages/returnedBooks.html',
+            controller: 'returnedBooksController'
         });
 });
 
@@ -152,9 +156,23 @@ myLibrary.controller('issuedBooksController', ['$scope', 'bookDetails', function
     $scope.returnDate = new Date();
     $scope.returnDate.setDate($scope.issuedDate.getDate() + 5);
     $scope.issuedBookDetails = bookDetails.bookDetails;
-    console.log($scope.issuedBookDetails);
+    // console.log($scope.issuedBookDetails);
 }]);
+myLibrary.controller('returnedBooksController', ['$scope', 'bookDetails', function ($scope, bookDetails) {
+    $scope.issuedDate = new Date();
+    $scope.returnDate = new Date();
+    $scope.returnDate.setDate($scope.issuedDate.getDate() + 5);
+    $scope.returnedBookDetails = bookDetails.bookDetails;
+    // console.log($scope.returnedBookDetails);
+    $scope.returnBook = function (pos) {
+        $scope.returnedBookDetails.splice(pos, 1);
+        // console.log($scope.returnedBookDetails);
+    };
+    $scope.$watch('bookDetails', function () {
+        bookDetails.bookDetails = $scope.returnedBookDetails;
+    });
 
+}]);
 
 
 // DIRECTIVES
