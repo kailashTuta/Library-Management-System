@@ -91,14 +91,14 @@ html body {
     border-bottom-left-radius: 30px;
 }
 
-#availableBooks:hover {
-    box-shadow: 5px 15px 10px grey;
+#availableBooks {
+    box-shadow: 12px 12px 22px grey;
 }
 
-#issuedBooks:hover {
-    box-shadow: 5px 15px 10px grey;
+#issuedBooks {
+    box-shadow: 12px 12px 22px grey;
 }
 
-#returnBooks:hover {
-    box-shadow: 5px 15px 10px grey;
+#returnBooks {
+    box-shadow: 12px 12px 22px grey;
 }

@@ -66,10 +66,11 @@ myLibrary.controller('servicesController', ['$scope', '$http', function ($scope,
         $scope.services = response.data;
     });
 }]);
-myLibrary.controller('loginController', ['$scope', 'userCredentials', '$window', function ($scope, usercredentials, $window) {
+myLibrary.controller('loginController', ['$scope', 'userCredentials', '$window', '$route', function ($scope, usercredentials, $window, $route) {
     // console.log($scope.password);
     $scope.loginDetails = usercredentials.userDetails;
-    console.log($scope.loginDetails);
+    $scope.loginAlert = false;
+    // console.log($scope.loginDetails);
     $scope.validation = function () {
         var logged = false;
         for (var i = 0; i < $scope.loginDetails.length; i++) {
@@ -80,12 +81,17 @@ myLibrary.controller('loginController', ['$scope', 'userCredentials', '$window',
         if (logged) {
             $window.location.href = '#/library';
         } else {
-            alert('Invalid Details');
+            // alert('Invalid Details');
+            $scope.loginAlert = true;
         }
+        $scope.load = function () {
+            $route.reload();
+        };
     };
 }]);
-myLibrary.controller('registerController', ['$scope', 'userCredentials', '$window', function ($scope, userCredentials, $window) {
+myLibrary.controller('registerController', ['$scope', 'userCredentials', '$window', '$route', function ($scope, userCredentials, $window, $route) {
     $scope.registerDetails = userCredentials.userDetails;
+    $scope.registerAlert = false;
     $scope.validation = function () {
         var logged = true;
         for (var i = 0; i < $scope.registerDetails.length; i++) {
@@ -98,8 +104,12 @@ myLibrary.controller('registerController', ['$scope', 'userCredentials', '$windo
             $window.location.href = '#/login';
         }
         else {
-            alert("User already exist");
+            $scope.registerAlert = true;
+            // alert("User already exist");
         }
+    };
+    $scope.load = function () {
+        $route.reload();
     };
     $scope.$watch('userDetails', function () {
         userCredentials.userDetails = $scope.registerDetails;
