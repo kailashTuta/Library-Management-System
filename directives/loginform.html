@@ -4,7 +4,7 @@
             <label for="email" class="text-white">Email</label>
             <input type="email" name="email" class="form-control" placeholder="Email Address" ng-model="email"
                 autocomplete="off" ng-required="true">
-            <small class="text-warning" ng-show="loginForm.email.$invalid && loginForm.email.$touched">Enter your
+            <small class="text-warning" ng-show="loginForm.email.$invalid && loginForm.email.$touched">Please Enter your
                 Email</small>
         </div>
     </div>
@@ -13,7 +13,8 @@
             <label for="password" class="text-white">Password</label>
             <input type="password" name="password" class="form-control" placeholder="Password" ng-model="password"
                 ng-required="true">
-            <small class="text-warning" ng-show="loginForm.password.$invalid && loginForm.password.$touched">Enter
+            <small class="text-warning" ng-show="loginForm.password.$invalid && loginForm.password.$touched">Please
+                Enter
                 Your
                 Password</small>
         </div>

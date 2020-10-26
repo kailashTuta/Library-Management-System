@@ -129,6 +129,8 @@ myLibrary.controller('booksController', ['$scope', '$http', 'bookDetails', funct
         $scope.software = [];
         $scope.microsoft = [];
         $scope.others = [];
+        // $scope.added = false;
+        // $scope.add = true;
         for (var i = 0; i <= $scope.books.length; i++) {
             if ($scope.books[i].categories[0] == 'Java' || $scope.books[i].categories[1] == 'Java') {
                 $scope.java.push($scope.books[i]);
@@ -155,6 +157,8 @@ myLibrary.controller('booksController', ['$scope', '$http', 'bookDetails', funct
     });
     $scope.addBook = function (book) {
         $scope.bookDetails.push(book);
+        // $scope.added = true;
+        // $scope.add = false;
         console.log($scope.bookDetails);
     };
     $scope.$watch('bookDetails', function () {
