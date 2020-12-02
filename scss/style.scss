@@ -1,0 +1,153 @@
+@import "./resets";
+@import "./animate";
+@import "./variable";
+html {
+    body {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-family: $heading-font;
+}
+
+h3 {
+    font-family: $primary-font;
+}
+
+h4 {
+    font-family: $primary-font;
+}
+
+p {
+    font-family: $para-font;
+}
+
+label {
+    font-family: $secondary-font;
+}
+
+input {
+    font-family: $secondary-font;
+}
+
+th {
+    font-family: $primary-font;
+}
+
+td {
+    font-family: $table-font;
+}
+
+.navbar-brand {
+    font-family: $heading-font;
+}
+
+.nav-item {
+    .nav-link {
+        font-family: $nav-font;
+        font-size: 20px;
+        margin-left: 60px;
+        font-weight: 500;
+    }
+}
+
+.jumbotron {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/Home-img.jpg");
+    background-size: cover;
+    margin-bottom: 20px;
+}
+
+#para-1 {
+    font-family:$para-font;
+    font-size: 22px;
+    text-align: justify;
+}
+
+#homeTitle {
+    margin-bottom: 10px;
+}
+
+#homeMain {
+    margin-bottom: 80px;
+}
+
+#homeDescription {
+    font-size: 16px;
+    text-align: justify;
+}
+
+#stickyFooter {
+    flex-shrink: none;
+
+    h4 {
+        text-transform: capitalize;
+    }
+}
+
+#followIcons {
+    li {
+        list-style: none;
+        margin-bottom: 15px;
+    }
+
+    .fa {
+        display: inline-block;
+        border-radius: 60px;
+        box-shadow: 0px 0px 2px #888;
+        padding: 0.5em 0.6em;
+    }
+}
+
+#footerText {
+    margin-bottom: 8px;
+}
+
+.fa-facebook {
+    color: rgb(72, 103, 170);
+}
+
+.fa-twitter {
+    color: rgb(51, 170, 231);
+}
+
+.fa-linkedin {
+    color: rgb(0, 119, 181);
+}
+
+#serviceDetails {
+    margin-bottom: 20px;
+    animation: fadein 8s;
+
+    .card-body {
+        text-align: left;
+    }
+}
+
+#libraryLogin {
+    background: rgb(17, 53, 55);
+    border-radius: 30px;
+    box-shadow: $shadow;
+}
+
+#loginImage {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+#availableBooks {
+    box-shadow: $shadow;
+}
+
+#issuedBooks {
+    box-shadow: $shadow;
+}
+
+#returnBooks {
+    box-shadow: $shadow;
+}
