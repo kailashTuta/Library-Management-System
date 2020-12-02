@@ -4,7 +4,7 @@
     "sources": [
         "../scss/style.scss",
         "../scss/_resets.scss",
-        "../scss/_animate.scss",
+        "../scss/_animation.scss",
         "../scss/_variable.scss"
     ],
     "names": [],
